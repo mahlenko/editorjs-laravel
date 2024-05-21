@@ -1,0 +1,22 @@
+{
+    "name": "mahlenko/editor-js-laravel",
+    "autoload": {
+        "psr-4": {
+            "Mahlenko\\EditorJS\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Makhlenko Sergey",
+            "email": "mahlenko-weblive@yandex.ru"
+        }
+    ],
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mahlenko\\EditorJS\\Kernel"
+            ]
+        }
+    }
+}
