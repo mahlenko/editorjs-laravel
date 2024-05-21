@@ -33,6 +33,14 @@ class Page extends Model {
 }
 ```
 
+## Пример использования
+```php
+    $page = \App\Model\Page::findOrFail(1);
+    
+    return view('{your_template}')
+        ->with('body', $page->html);
+```
+
 ## Ручная установка
 
 Для Laravel выше 11 версии, добавьте в `bootstrap/providers.php`
