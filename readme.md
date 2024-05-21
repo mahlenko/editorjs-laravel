@@ -25,12 +25,13 @@ use Mahlenko\EditorJS\Render;
 Добавьте в вашу модель метод `getHtmlAttribute()`,
 ```php
 use Mahlenko\EditorJS\Render;
+use Illuminate\Contracts\View\View;
 use Illuminate\Database\Eloquent\Model;
 
 class Page extends Model {
     // ...
     
-    public function getHtmlAttribute(): string {
+    public function getHtmlAttribute(): View {
         return Render::make($this->body);
     }
 }
