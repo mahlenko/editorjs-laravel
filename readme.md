@@ -3,14 +3,17 @@
 Преобразует JSON полученный с фронтенда от [Editor.js](https://editorjs.io) в HTML
 используя Laravel blade компоненты.
 
+![Cover](/resources/cover.png)
+
+
 ## Установка
 Для установки используйте `composer`:
 
 ```shell
-composer required mahlenko/editorjs-laravel
+composer require mahlenko/editor-js-laravel
 ```
 
-Laravel автоматически подключит пакет `editorjs-laravel`.
+Laravel автоматически подключит пакет `editor-js-laravell`.
 
 ## Инструкция
 Подключите библиотеку в вашей скрипте, например для модели `Page`:
@@ -40,33 +43,6 @@ class Page extends Model {
     return view('{your_template}')
         ->with('body', $page->html);
 ```
-
-## Ручная установка
-
-Для Laravel выше 11 версии, добавьте в `bootstrap/providers.php`
-провайдер:
-```php
-<?php
-
-return [
-    App\Providers\AppServiceProvider::class,
-    // other packages ...
-    
-    \Mahlenko\EditorJS\Kernel::class, // <- append row
-];
-```
-
-Для Laravel ниже 11 версии, добавьте в файл `config/app.php`:
-```php
-/*
- * Application Service Providers...
- */
- 
-// other packages ...
-
-\Mahlenko\EditorJS\Kernel::class, // <- append row
-```
-
 ## Настройка
 Вы можете изменить отображение элементов, или добавить собственные типы,
 после публикации ресурсов:
@@ -80,3 +56,11 @@ php artisan vendor:publish --tag=editor.js
 ```bash
 ./vendor/bin/sail artisan vendor:publish --tag=editor.js
 ```
+
+## ✨ Благодарности
+
+![TonBlockchainLogo](/resources/ton_logo_dark_background.svg#gh-dark-mode-only)
+![TonBlockchainLogo](/resources/ton_logo_light_background.svg#gh-light-mode-only)
+
+Вы всегда можете отправить благодарность на чашку кофе или больше 😉 с помощью TON на мой кошелек
+`appto-wallet.ton`
