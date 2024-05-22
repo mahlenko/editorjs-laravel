@@ -15,34 +15,12 @@ composer require mahlenko/editor-js-laravel
 
 Laravel автоматически подключит пакет `editor-js-laravell`.
 
-## Инструкция
-Подключите библиотеку в вашей скрипте, например для модели `Page`:
-
-```php
-use Mahlenko\EditorJS\Render;
-```
-
-Добавьте в вашу модель метод `getHtmlAttribute()`,
-```php
-use Mahlenko\EditorJS\Render;
-use Illuminate\Contracts\View\View;
-use Illuminate\Database\Eloquent\Model;
-
-class Page extends Model {
-    // ...
-    
-    public function getHtmlAttribute(): View {
-        return Render::make($this->body);
-    }
-}
-```
-
 ## Пример использования
-```php
-    $page = \App\Model\Page::findOrFail(1);
-    
-    return view('{your_template}')
-        ->with('body', $page->html);
+
+Используйте Blade directive `@editorJs`, чтобы показать контент созданный используя Editor.js  
+
+```bladehtml
+@editorJs($page->body)
 ```
 ## Настройка
 Вы можете изменить отображение элементов, или добавить собственные типы,
